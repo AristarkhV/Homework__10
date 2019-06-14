@@ -8,7 +8,7 @@ public class Storage<T, K> {
     private int DEFAULTCAPACITY = 10;
     private int currentCapacity;
     private int size;
-    private int basket;
+    private int basketNumber;
     private double loadFactor;
     Node<K, T> currentNode;
     public Node<K, T>[] values;
