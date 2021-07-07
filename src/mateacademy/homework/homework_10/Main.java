@@ -26,9 +26,11 @@ public class Main {
         System.out.println(storage.get(9));
         System.out.println(storage.get(10));
 
-        for (int i = 0; i < 101; i++){
-            storage.put(i, "n:"+i);
+        for (int i = 0; i < 1000; i++){
+            storage.put(i, "value:"+i);
             System.out.println(storage.get(i));
         }
+//        storage.put(128, "777");
+//        System.out.println(storage.get(128));
     }
 }

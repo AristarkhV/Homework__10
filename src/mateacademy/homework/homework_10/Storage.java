@@ -5,7 +5,7 @@ import java.util.NoSuchElementException;
 
 public class Storage<T, K> {
 
-    private int DEFAULTCAPACITY = 10;
+    private static final int DEFAULTCAPACITY = 10;
     private int currentCapacity;
     private int size;
     private int basketNumber;
@@ -68,10 +68,11 @@ public class Storage<T, K> {
         if (values[getPutIndex(key)] == null) {
             throw new NoSuchElementException();
         }
-        if (values[getPutIndex(key)].entry.getKey() == key) {
-            return values[getPutIndex(key)].entry.getValue();
+        basket = getPutIndex(key);
+        if (values[basket].entry.getKey().equals(key)) {
+            return values[basket].entry.getValue();
         }
-        Node<K, T> temp = values[getPutIndex(key)];
+        Node<K, T> temp = values[basket];
         do {
             temp = temp.next;
         } while (temp.entry.getKey() != key);
